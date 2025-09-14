@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zavix - Business Automation Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #3730a3);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #06b6d4, #2563eb);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(to right, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: none;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #06b6d4;
+        }
+        
+        .cta-button {
+            background: linear-gradient(to right, #06b6d4, #2563eb);
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+            backdrop-filter: blur(60px);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: bold;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #ffffff, #a5f3fc, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: #d1d5db;
+            margin-bottom: 32px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+        .btn-secondary {
+            padding: 16px 32px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 64px;
+        }
+        
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 32px;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        @media (min-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Card Styles */
+        .card {
+            padding: 32px;
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(6, 182, 212, 0.1);
+        }
+        
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+            color: #06b6d4;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .card:hover h3 {
+            color: #06b6d4;
+        }
+        
+        .card p {
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+        
+        /* Process Section */
+        .process-container {
+            position: relative;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+        
+        @media (min-width: 1024px) {
+            .process-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        
+        .process-step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #06b6d4, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0 auto 16px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 30px rgba(6, 182, 212, 0.3);
+        }
+        
+        .step-number:hover {
+            transform: scale(1.1);
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .step-description {
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin: 32px 0;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #06b6d4;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: #d1d5db;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+        
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(6, 182, 212, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #06b6d4;
+        }
+        
+        /* Form Styles */
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .form input,
+        .form textarea {
+            padding: 16px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form input:focus,
+        .form textarea:focus {
+            outline: none;
+            border-color: #06b6d4;
+        }
+        
+        .form input::placeholder,
+        .form textarea::placeholder {
+            color: #9ca3af;
+        }
+        
+        .form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form button {
+            padding: 16px;
+            border-radius: 12px;
+            background: linear-gradient(to right, #06b6d4, #2563eb);
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form button:hover {
+            box-shadow: 0 8px 30px rgba(6, 182, 212, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 48px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        .footer-text {
+            color: #9ca3af;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-text {
+                text-align: right;
+            }
+        }
+        
+        /* Utility Classes */
+        .backdrop-blur {
+            backdrop-filter: blur(10px);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hide scrollbar but allow scrolling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #06b6d4, #2563eb);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #0891b2, #1d4ed8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">Z</div>
+                <span class="logo-text">Zavix</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#industries">Industries</a>
+                <a href="#process">Process</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <a href="#contact" class="cta-button">Schedule Audit</a>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Automate Your<br>Business Future</h1>
+            <p>Transform your operations with intelligent automation solutions tailored to your industry. We turn complex workflows into streamlined, efficient systems that scale with your growth.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Get Free Audit →</a>
+                <a href="#services" class="btn-secondary">View Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive automation solutions that transform how you work, from process optimization to custom software development.</p>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Process Automation</h3>
+                    <p>Transform manual workflows into intelligent, automated systems that save time and reduce errors.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🔗</div>
+                    <h3>System Integration</h3>
+                    <p>Seamlessly connect your existing tools and platforms for unified business operations.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Custom Software</h3>
+                    <p>Tailored solutions built specifically for your unique business requirements and challenges.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">☁️</div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable cloud infrastructure and migration services for modern business needs.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>Mobile Applications</h3>
+                    <p>Native and cross-platform mobile solutions to extend your business reach.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Data-driven insights and interactive dashboards for informed decision making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="section backdrop-blur">
+        <div class="container">
+            <h2 class="section-title">Industry Expertise</h2>
+            <p class="section-subtitle">Deep domain knowledge across multiple industries, delivering solutions that understand your unique challenges.</p>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>Manufacturing</h3>
+                    <p>ERP systems, supply chain optimization, and production automation</p>
+                    <span class="text-gradient">15+ Projects</span>
+                </div>
+                
+                <div class="card">
+                    <h3>Healthcare</h3>
+                    <p>Patient management systems, compliance tracking, and workflow automation</p>
+                    <span class="text-gradient">8+ Projects</span>
+                </div>
+                
+                <div class="card">
+                    <h3>Retail & E-commerce</h3>
+                    <p>Inventory management, order processing, and customer experience platforms</p>
+                    <span class="text-gradient">12+ Projects</span>
+                </div>
+                
+                <div class="card">
+                    <h3>Financial Services</h3>
+                    <p>Process automation, compliance systems, and customer onboarding solutions</p>
+                    <span class="text-gradient">6+ Projects</span>
+                </div>
+                
+                <div class="card">
+                    <h3>Logistics</h3>
+                    <p>Track & trace systems, route optimization, and warehouse management</p>
+                    <span class="text-gradient">10+ Projects</span>
+                </div>
+                
+                <div class="card">
+                    <h3>Food & Beverage</h3>
+                    <p>Quality control systems, supply chain tracking, and production management</p>
+                    <span class="text-gradient">7+ Projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Process</h2>
+            <p class="section-subtitle">A proven methodology that ensures successful automation implementations with measurable results and lasting impact.</p>
+            
+            <div class="process-container">
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">Discovery</h3>
+                        <p class="step-description">We analyze your current workflows and identify automation opportunities</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">Design</h3>
+                        <p class="step-description">Custom solution architecture tailored to your specific business needs</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title">Develop</h3>
+                        <p class="step-description">Agile development with regular feedback loops and transparent progress</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3 class="step-title">Deploy</h3>
+                        <p class="step-description">Seamless implementation with comprehensive training and support</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <h3 class="step-title">Scale</h3>
+                        <p class="step-description">Continuous optimization and scaling as your business grows</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="section backdrop-blur">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">Real results from real businesses. See how our automation solutions have transformed operations and delivered measurable outcomes.</p>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="text-gradient">Pharmaceutical</div>
+                    <h3>Manufacturing Leader</h3>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #d1d5db; margin-bottom: 8px;">Challenge</h4>
+                        <p style="color: #9ca3af; font-size: 14px;">Manual inventory management leading to stockouts and overstock</p>
+                    </div>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #d1d5db; margin-bottom: 8px;">Solution</h4>
+                        <p style="color: #9ca3af; font-size: 14px;">Automated ERP system with real-time tracking and predictive analytics</p>
+                    </div>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #06b6d4; margin-bottom: 8px;">Results</h4>
+                        <p style="color: #67e8f9; font-weight: 600;">30% reduction in wastage, 99.5% inventory accuracy</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="text-gradient">Food & Beverage</div>
+                    <h3>Regional Distributor</h3>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #d1d5db; margin-bottom: 8px;">Challenge</h4>
+                        <p style="color: #9ca3af; font-size: 14px;">Complex supply chain with multiple vendors and compliance requirements</p>
+                    </div>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #d1d5db; margin-bottom: 8px;">Solution</h4>
+                        <p style="color: #9ca3af; font-size: 14px;">Integrated track & trace system with automated compliance reporting</p>
+                    </div>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #06b6d4; margin-bottom: 8px;">Results</h4>
+                        <p style="color: #67e8f9; font-weight: 600;">50% faster delivery times, 100% compliance adherence</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="text-gradient">Veterinary Services</div>
+                    <h3>Healthcare Provider</h3>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #d1d5db; margin-bottom: 8px;">Challenge</h4>
+                        <p style="color: #9ca3af; font-size: 14px;">Paper-based patient records and manual appointment scheduling</p>
+                    </div>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #d1d5db; margin-bottom: 8px;">Solution</h4>
+                        <p style="color: #9ca3af; font-size: 14px;">Digital patient management system with automated workflows</p>
+                    </div>
+                    <div style="margin: 16px 0;">
+                        <h4 style="color: #06b6d4; margin-bottom: 8px;">Results</h4>
+                        <p style="color: #67e8f9; font-weight: 600;">40% increase in patient throughput, 95% appointment accuracy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <h2 class="section-title" style="text-align: left;">About Zavix</h2>
+                    <p style="font-size: 1.25rem; color: #d1d5db; margin-bottom: 24px;">
+                        We are a specialized business development and automation consulting agency focused on transforming how organizations operate in the digital age.
+                    </p>
+                    <p style="color: #9ca3af; margin-bottom: 32px;">
+                        With over 4 years of experience building enterprise-grade solutions, we combine deep technical expertise with industry knowledge to deliver automation systems that not only work today but scale for tomorrow.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div>
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Industries Served</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2" style="gap: 16px;">
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div class="card" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(59, 130, 246, 0.2));">
+                            <div style="color: #06b6d4; margin-bottom: 12px;">🎯</div>
+                            <h3>Precision Focus</h3>
+                            <p style="font-size: 14px;">Solutions built exactly for your needs</p>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2));">
+                            <div style="color: #3b82f6; margin-bottom: 12px;">🛡️</div>
+                            <h3>Enterprise Security</h3>
+                            <p style="font-size: 14px;">Bank-level security standards</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 32px;">
+                        <div class="card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));">
+                            <div style="color: #6366f1; margin-bottom: 12px;">🌐</div>
+                            <h3>Global Scale</h3>
+                            <p style="font-size: 14px;">Solutions that grow with you</p>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));">
+                            <div style="color: #a855f7; margin-bottom: 12px;">👥</div>
+                            <h3>Expert Team</h3>
+                            <p style="font-size: 14px;">Dedicated specialists for every project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section backdrop-blur">
+        <div class="container" style="max-width: 1000px;">
+            <h2 class="section-title">Ready to Automate?</h2>
+            <p class="section-subtitle">Let's discuss how we can transform your business operations. Schedule a free consultation to explore the possibilities.</p>
+            
+            <div class="contact-grid">
+                <div class="card">
+                    <h3 style="margin-bottom: 24px;">Get in Touch</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <div style="font-weight: 600;">Email</div>
+                                <div style="color: #9ca3af;">hello@zavix.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <div style="font-weight: 600;">Phone</div>
+                                <div style="color: #9ca3af;">+1 (555) 123-4567</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div style="font-weight: 600;">Location</div>
+                                <div style="color: #9ca3af;">Global Remote Services</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 style="margin-bottom: 24px;">Schedule Free Audit</h3>
+                    <form class="form" onsubmit="handleFormSubmit(event)">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Company Name" required>
+                        <textarea placeholder="Tell us about your automation needs..." required></textarea>
+                        <button type="submit">Schedule Free Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <div class="logo-icon">Z</div>
+                    <span class="logo-text">Zavix</span>
+                </div>
+                
+                <div class="footer-text">
+                    <p>&copy; 2024 Zavix. All rights reserved.</p>
+                    <p style="margin-top: 4px;">Transforming businesses through intelligent automation</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            // Simple mobile menu implementation
+            alert('Mobile menu would open here. This is a simplified version for the downloadable file.');
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your interest! This form submission would be processed by your backend server.');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.05)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation to cards when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
