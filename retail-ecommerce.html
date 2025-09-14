@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Consultants for Retail & E-commerce | Zavix</title>
+    <meta name="description" content="Zavix builds no-code/low-code automations that save retail companies 100s of hours & $1000s monthly. Book a 15-min audit.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #0B0F1A;
+            background: #FFFFFF;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #0B0F1A;
+            color: #FFFFFF;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00E6C3;
+        }
+        
+        .cta-btn {
+            background: #00E6C3;
+            color: #0B0F1A;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background: #00D4B1;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0B0F1A 0%, #1a2332 100%);
+            color: #FFFFFF;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #F5F2EC;
+        }
+        
+        /* Pain Points */
+        .pain-points {
+            padding: 4rem 0;
+            background: #F5F2EC;
+        }
+        
+        .pain-points h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0B0F1A;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pain-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: #FFFFFF;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(11, 15, 26, 0.1);
+        }
+        
+        .pain-icon {
+            color: #00E6C3;
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Metrics */
+        .metrics {
+            padding: 4rem 0;
+            background: #0B0F1A;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .metric-item h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            color: #00E6C3;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-item p {
+            font-size: 1.125rem;
+            color: #F5F2EC;
+        }
+        
+        /* Solutions */
+        .solutions {
+            padding: 4rem 0;
+        }
+        
+        .solutions h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0B0F1A;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .solution-card {
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(11, 15, 26, 0.1);
+            border-left: 4px solid #00E6C3;
+        }
+        
+        .solution-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0B0F1A;
+        }
+        
+        /* Case Study */
+        .case-study {
+            padding: 4rem 0;
+            background: #F5F2EC;
+        }
+        
+        .case-study h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0B0F1A;
+        }
+        
+        .case-card {
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 8px 24px rgba(11, 15, 26, 0.1);
+        }
+        
+        .case-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .case-type {
+            background: #00E6C3;
+            color: #0B0F1A;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .case-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            color: #0B0F1A;
+            margin-bottom: 1rem;
+        }
+        
+        .case-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .result-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #F5F2EC;
+            border-radius: 8px;
+        }
+        
+        .result-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00E6C3;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ROI Calculator */
+        .roi-calculator {
+            padding: 4rem 0;
+            background: #0B0F1A;
+            color: #FFFFFF;
+        }
+        
+        .roi-calculator h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #FFFFFF;
+        }
+        
+        .calculator-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .calculator-input {
+            margin-bottom: 1.5rem;
+        }
+        
+        .calculator-input label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #F5F2EC;
+        }
+        
+        .calculator-input input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: #00E6C3;
+            border-radius: 4px;
+            outline: none;
+        }
+        
+        .calculator-input .value-display {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #00E6C3;
+            margin-top: 0.5rem;
+        }
+        
+        .roi-results {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: #00E6C3;
+            color: #0B0F1A;
+            border-radius: 8px;
+        }
+        
+        .roi-results h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .savings-amount {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: #F5F2EC;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0B0F1A;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #0B0F1A;
+        }
+        
+        .cta-button-large {
+            background: #00E6C3;
+            color: #0B0F1A;
+            padding: 1.25rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button-large:hover {
+            background: #00D4B1;
+            transform: translateY(-2px);
+        }
+        
+        .calendly-embed {
+            margin-top: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0B0F1A;
+            color: #FFFFFF;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00E6C3;
+        }
+        
+        /* Mobile Sticky CTA */
+        .mobile-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00E6C3;
+            color: #0B0F1A;
+            padding: 1rem;
+            border-radius: 50%;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 230, 195, 0.3);
+            z-index: 1000;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: block;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* FAQ Schema */
+        .faq-section {
+            padding: 4rem 0;
+        }
+        
+        .faq-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0B0F1A;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-question {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0B0F1A;
+        }
+        
+        .faq-answer {
+            color: #0B0F1A;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Zavix</div>
+                <a href="#cta" class="cta-btn">Book Audit</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>E-commerce Automation That Drives Sales</h1>
+            <p>Scale your retail operations with intelligent automation that optimizes inventory, accelerates order fulfillment, and enhances customer experience across all channels.</p>
+            <a href="#cta" class="cta-button-large">Book a 15-min Retail automation audit</a>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="pain-points">
+        <div class="container">
+            <h2>Retail Challenges Limiting Your Growth?</h2>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="pain-icon">📦</div>
+                    <div>
+                        <h3>Manual inventory tracking across multiple channels</h3>
+                        <p>Overselling, stockouts, and disappointed customers</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">🛒</div>
+                    <div>
+                        <h3>Slow order processing and fulfillment workflows</h3>
+                        <p>Delayed shipments and reduced customer satisfaction</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">💬</div>
+                    <div>
+                        <h3>Inconsistent customer communication and support</h3>
+                        <p>Missed opportunities and damaged brand reputation</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">📊</div>
+                    <div>
+                        <h3>Disconnected sales channels and data silos</h3>
+                        <p>Poor visibility into performance and customer behavior</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">💰</div>
+                    <div>
+                        <h3>Manual pricing and promotion management</h3>
+                        <p>Lost margins and competitive disadvantages</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">📋</div>
+                    <div>
+                        <h3>Time-consuming returns and refund processing</h3>
+                        <p>Customer frustration and operational inefficiency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="metrics">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <h3 id="metric1">75</h3>
+                    <p>% Faster Order Processing</p>
+                </div>
+                <div class="metric-item">
+                    <h3 id="metric2">45</h3>
+                    <p>% Increase in Sales Velocity</p>
+                </div>
+                <div class="metric-item">
+                    <h3 id="metric3">90</h3>
+                    <p>% Reduction in Stockouts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="solutions">
+        <div class="container">
+            <h2>Retail & E-commerce Automation Solutions</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>Omnichannel Inventory Management</h3>
+                    <p>Unified inventory tracking across all sales channels with automated stock synchronization, reorder points, and demand forecasting to prevent stockouts.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Order Processing Automation</h3>
+                    <p>Streamline order fulfillment from cart to delivery with automated routing, shipping label generation, and real-time tracking updates for customers.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Customer Experience Platform</h3>
+                    <p>Personalized communication workflows, automated follow-ups, review requests, and customer support automation to boost satisfaction and loyalty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="case-study">
+        <div class="container">
+            <h2>Success Story</h2>
+            <div class="case-card">
+                <div class="case-header">
+                    <div class="case-type">E-commerce</div>
+                    <h3 class="case-title">Client X - Fashion Retailer</h3>
+                </div>
+                <div>
+                    <h4>Challenge</h4>
+                    <p>Multi-channel fashion retailer struggled with inventory synchronization across online store, marketplace platforms, and physical locations, leading to overselling and customer complaints.</p>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <h4>Solution</h4>
+                    <p>Implemented comprehensive omnichannel inventory management with automated order routing, customer communication workflows, and real-time stock synchronization across all platforms.</p>
+                </div>
+                <div class="case-results">
+                    <div class="result-item">
+                        <div class="result-number">75%</div>
+                        <div>Faster order processing</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">45%</div>
+                        <div>Increase in sales velocity</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">90%</div>
+                        <div>Reduction in stockouts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-calculator">
+        <div class="container">
+            <h2>Calculate Your Retail ROI</h2>
+            <div class="calculator-container">
+                <div class="calculator-input">
+                    <label for="monthlyOrders">Monthly Orders Processed:</label>
+                    <input type="range" id="monthlyOrders" min="100" max="10000" value="1000" step="100">
+                    <div class="value-display" id="monthlyOrdersDisplay">1,000</div>
+                </div>
+                <div class="calculator-input">
+                    <label for="timePerOrder">Minutes Saved Per Order:</label>
+                    <input type="range" id="timePerOrder" min="5" max="30" value="15" step="1">
+                    <div class="value-display" id="timePerOrderDisplay">15</div>
+                </div>
+                <div class="calculator-input">
+                    <label for="laborCost">Hourly Labor Cost ($):</label>
+                    <input type="range" id="laborCost" min="15" max="35" value="20" step="5">
+                    <div class="value-display" id="laborCostDisplay">$20</div>
+                </div>
+                <div class="roi-results">
+                    <h3>Estimated Annual Savings</h3>
+                    <div class="savings-amount" id="annualSavings">$60,000</div>
+                    <p>Based on automated order processing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">Can automation integrate with our existing e-commerce platform?</h3>
+                <p class="faq-answer">Yes, we have extensive experience integrating with popular platforms like Shopify, WooCommerce, Magento, BigCommerce, and custom solutions. Our automation works seamlessly with your existing tech stack without disrupting operations.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How do you handle inventory synchronization across multiple sales channels?</h3>
+                <p class="faq-answer">Our omnichannel inventory management system provides real-time synchronization across all your sales channels including online stores, marketplaces (Amazon, eBay), and physical locations, preventing overselling and stockouts.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What's the typical implementation timeline for retail automation?</h3>
+                <p class="faq-answer">Most retail automation projects are implemented within 2-6 weeks depending on complexity. We prioritize high-impact automations like inventory management and order processing first to deliver immediate value while building comprehensive solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2>Ready to Scale Your Retail Operations?</h2>
+            <p>Book a free 15-minute consultation to discover how automation can accelerate your growth</p>
+            <a href="https://calendly.com/zavix/retail-audit?utm_source=retail&utm_medium=page" class="cta-button-large" target="_blank">Book a 15-min Retail automation audit</a>
+            <div class="calendly-embed">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/zavix/retail-audit?utm_source=retail&utm_medium=page" style="min-width:320px;height:630px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Zavix</div>
+                <div>
+                    <p>&copy; 2025 Zavix. All rights reserved.</p>
+                    <p>Business Automation Consulting</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <a href="#cta" class="mobile-cta">📞</a>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can automation integrate with our existing e-commerce platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we have extensive experience integrating with popular platforms like Shopify, WooCommerce, Magento, BigCommerce, and custom solutions. Our automation works seamlessly with your existing tech stack without disrupting operations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you handle inventory synchronization across multiple sales channels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our omnichannel inventory management system provides real-time synchronization across all your sales channels including online stores, marketplaces (Amazon, eBay), and physical locations, preventing overselling and stockouts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the typical implementation timeline for retail automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most retail automation projects are implemented within 2-6 weeks depending on complexity. We prioritize high-impact automations like inventory management and order processing first to deliver immediate value while building comprehensive solutions."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // ROI Calculator
+        function updateCalculator() {
+            const monthlyOrders = document.getElementById('monthlyOrders').value;
+            const timePerOrder = document.getElementById('timePerOrder').value;
+            const laborCost = document.getElementById('laborCost').value;
+            
+            document.getElementById('monthlyOrdersDisplay').textContent = parseInt(monthlyOrders).toLocaleString();
+            document.getElementById('timePerOrderDisplay').textContent = timePerOrder;
+            document.getElementById('laborCostDisplay').textContent = '$' + laborCost;
+            
+            const annualSavings = (monthlyOrders * (timePerOrder / 60) * laborCost * 12);
+            document.getElementById('annualSavings').textContent = '$' + Math.round(annualSavings).toLocaleString();
+        }
+        
+        document.getElementById('monthlyOrders').addEventListener('input', updateCalculator);
+        document.getElementById('timePerOrder').addEventListener('input', updateCalculator);
+        document.getElementById('laborCost').addEventListener('input', updateCalculator);
+        
+        // Counter animation for metrics
+        function animateCounters() {
+            const counters = document.querySelectorAll('[id^="metric"]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 20);
+            });
+        }
+        
+        // Intersection Observer for counter animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        observer.observe(document.querySelector('.metrics'));
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

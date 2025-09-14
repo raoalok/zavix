@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Consultants for Healthcare | Zavix</title>
+    <meta name="description" content="Zavix builds no-code/low-code automations that save healthcare companies 100s of hours & $1000s monthly. Book a 15-min audit.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #0B0F1A;
+            background: #FFFFFF;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #0B0F1A;
+            color: #FFFFFF;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00E6C3;
+        }
+        
+        .cta-btn {
+            background: #00E6C3;
+            color: #0B0F1A;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background: #00D4B1;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0B0F1A 0%, #1a2332 100%);
+            color: #FFFFFF;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #F5F2EC;
+        }
+        
+        /* Pain Points */
+        .pain-points {
+            padding: 4rem 0;
+            background: #F5F2EC;
+        }
+        
+        .pain-points h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0B0F1A;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pain-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: #FFFFFF;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(11, 15, 26, 0.1);
+        }
+        
+        .pain-icon {
+            color: #00E6C3;
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Metrics */
+        .metrics {
+            padding: 4rem 0;
+            background: #0B0F1A;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .metric-item h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            color: #00E6C3;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-item p {
+            font-size: 1.125rem;
+            color: #F5F2EC;
+        }
+        
+        /* Solutions */
+        .solutions {
+            padding: 4rem 0;
+        }
+        
+        .solutions h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0B0F1A;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .solution-card {
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(11, 15, 26, 0.1);
+            border-left: 4px solid #00E6C3;
+        }
+        
+        .solution-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0B0F1A;
+        }
+        
+        /* Case Study */
+        .case-study {
+            padding: 4rem 0;
+            background: #F5F2EC;
+        }
+        
+        .case-study h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0B0F1A;
+        }
+        
+        .case-card {
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 8px 24px rgba(11, 15, 26, 0.1);
+        }
+        
+        .case-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .case-type {
+            background: #00E6C3;
+            color: #0B0F1A;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .case-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            color: #0B0F1A;
+            margin-bottom: 1rem;
+        }
+        
+        .case-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .result-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #F5F2EC;
+            border-radius: 8px;
+        }
+        
+        .result-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00E6C3;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ROI Calculator */
+        .roi-calculator {
+            padding: 4rem 0;
+            background: #0B0F1A;
+            color: #FFFFFF;
+        }
+        
+        .roi-calculator h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #FFFFFF;
+        }
+        
+        .calculator-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .calculator-input {
+            margin-bottom: 1.5rem;
+        }
+        
+        .calculator-input label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #F5F2EC;
+        }
+        
+        .calculator-input input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: #00E6C3;
+            border-radius: 4px;
+            outline: none;
+        }
+        
+        .calculator-input .value-display {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #00E6C3;
+            margin-top: 0.5rem;
+        }
+        
+        .roi-results {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: #00E6C3;
+            color: #0B0F1A;
+            border-radius: 8px;
+        }
+        
+        .roi-results h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .savings-amount {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: #F5F2EC;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0B0F1A;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #0B0F1A;
+        }
+        
+        .cta-button-large {
+            background: #00E6C3;
+            color: #0B0F1A;
+            padding: 1.25rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button-large:hover {
+            background: #00D4B1;
+            transform: translateY(-2px);
+        }
+        
+        .calendly-embed {
+            margin-top: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0B0F1A;
+            color: #FFFFFF;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00E6C3;
+        }
+        
+        /* Mobile Sticky CTA */
+        .mobile-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00E6C3;
+            color: #0B0F1A;
+            padding: 1rem;
+            border-radius: 50%;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 230, 195, 0.3);
+            z-index: 1000;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: block;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* FAQ Schema */
+        .faq-section {
+            padding: 4rem 0;
+        }
+        
+        .faq-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0B0F1A;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-question {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0B0F1A;
+        }
+        
+        .faq-answer {
+            color: #0B0F1A;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Zavix</div>
+                <a href="#cta" class="cta-btn">Book Audit</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Healthcare Automation That Ensures Compliance</h1>
+            <p>HIPAA-compliant automation solutions that streamline patient care, reduce administrative burden, and improve outcomes while maintaining the highest security standards.</p>
+            <a href="#cta" class="cta-button-large">Book a 15-min Healthcare automation audit</a>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="pain-points">
+        <div class="container">
+            <h2>Healthcare Administrative Challenges Draining Your Resources?</h2>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="pain-icon">📋</div>
+                    <div>
+                        <h3>Paper-based patient records and manual documentation</h3>
+                        <p>Inefficient workflows and compliance risks from incomplete records</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">⏰</div>
+                    <div>
+                        <h3>Manual appointment scheduling and patient communication</h3>
+                        <p>Double bookings, no-shows, and frustrated patients and staff</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">💰</div>
+                    <div>
+                        <h3>Complex insurance verification and billing processes</h3>
+                        <p>Delayed payments and claim denials due to processing errors</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">🔒</div>
+                    <div>
+                        <h3>HIPAA compliance and data security concerns</h3>
+                        <p>Risk of violations and penalties from manual processes</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">📊</div>
+                    <div>
+                        <h3>Disconnected systems requiring duplicate data entry</h3>
+                        <p>Errors and inefficiencies across EMR, billing, and scheduling</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">👥</div>
+                    <div>
+                        <h3>Staff overwhelmed with administrative tasks</h3>
+                        <p>Less time for patient care and increased burnout rates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="metrics">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <h3 id="metric1">40</h3>
+                    <p>% Increase in Patient Throughput</p>
+                </div>
+                <div class="metric-item">
+                    <h3 id="metric2">95</h3>
+                    <p>% Appointment Accuracy</p>
+                </div>
+                <div class="metric-item">
+                    <h3 id="metric3">60</h3>
+                    <p>% Reduction in Admin Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="solutions">
+        <div class="container">
+            <h2>HIPAA-Compliant Healthcare Automation</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>Patient Management Systems</h3>
+                    <p>Automated scheduling, reminders, and check-in processes that improve patient flow while maintaining HIPAA compliance and reducing no-shows.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Clinical Workflow Automation</h3>
+                    <p>Streamline documentation, lab orders, and care coordination with automated workflows that ensure complete, accurate patient records.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Revenue Cycle Optimization</h3>
+                    <p>Automate insurance verification, claims processing, and billing workflows to reduce denials and accelerate payment collection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="case-study">
+        <div class="container">
+            <h2>Success Story</h2>
+            <div class="case-card">
+                <div class="case-header">
+                    <div class="case-type">Healthcare</div>
+                    <h3 class="case-title">Client X - Multi-Specialty Clinic</h3>
+                </div>
+                <div>
+                    <h4>Challenge</h4>
+                    <p>Paper-based patient records and manual appointment scheduling created bottlenecks, leading to longer wait times and staff burnout. HIPAA compliance was challenging with scattered documentation.</p>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <h4>Solution</h4>
+                    <p>Implemented comprehensive digital patient management system with automated scheduling, EMR integration, and HIPAA-compliant workflow automation for clinical documentation.</p>
+                </div>
+                <div class="case-results">
+                    <div class="result-item">
+                        <div class="result-number">40%</div>
+                        <div>Increase in patient throughput</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">95%</div>
+                        <div>Appointment accuracy achieved</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">60%</div>
+                        <div>Reduction in admin time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-calculator">
+        <div class="container">
+            <h2>Calculate Your Healthcare ROI</h2>
+            <div class="calculator-container">
+                <div class="calculator-input">
+                    <label for="staff">Number of Administrative Staff:</label>
+                    <input type="range" id="staff" min="5" max="100" value="20" step="5">
+                    <div class="value-display" id="staffDisplay">20</div>
+                </div>
+                <div class="calculator-input">
+                    <label for="hoursSaved">Hours Saved Per Staff Per Week:</label>
+                    <input type="range" id="hoursSaved" min="5" max="25" value="12" step="1">
+                    <div class="value-display" id="hoursSavedDisplay">12</div>
+                </div>
+                <div class="calculator-input">
+                    <label for="hourlyRate">Average Hourly Rate ($):</label>
+                    <input type="range" id="hourlyRate" min="15" max="50" value="25" step="5">
+                    <div class="value-display" id="hourlyRateDisplay">$25</div>
+                </div>
+                <div class="roi-results">
+                    <h3>Estimated Annual Savings</h3>
+                    <div class="savings-amount" id="annualSavings">$312,000</div>
+                    <p>Based on automated healthcare workflows</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">Are your healthcare automation solutions HIPAA compliant?</h3>
+                <p class="faq-answer">Yes, all our healthcare automation solutions are built with HIPAA compliance as a core requirement. We implement robust security measures, encrypted data transmission, and audit trails to ensure patient data protection and regulatory compliance.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Can automation integrate with our existing EMR system?</h3>
+                <p class="faq-answer">Absolutely. We have extensive experience integrating with popular EMR systems like Epic, Cerner, Allscripts, and others. Our automation solutions work alongside your existing technology stack without disrupting patient care.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How do you ensure patient data security during implementation?</h3>
+                <p class="faq-answer">We follow strict security protocols including data encryption, access controls, staff training on HIPAA requirements, and comprehensive security audits. All team members are HIPAA trained and we maintain Business Associate Agreements with all healthcare clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <h2>Ready to Streamline Your Healthcare Operations?</h2>
+            <p>Book a free 15-minute consultation to discover HIPAA-compliant automation solutions</p>
+            <a href="https://calendly.com/zavix/healthcare-audit?utm_source=healthcare&utm_medium=page" class="cta-button-large" target="_blank">Book a 15-min Healthcare automation audit</a>
+            <div class="calendly-embed">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/zavix/healthcare-audit?utm_source=healthcare&utm_medium=page" style="min-width:320px;height:630px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Zavix</div>
+                <div>
+                    <p>&copy; 2025 Zavix. All rights reserved.</p>
+                    <p>Business Automation Consulting</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <a href="#cta" class="mobile-cta">📞</a>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are your healthcare automation solutions HIPAA compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all our healthcare automation solutions are built with HIPAA compliance as a core requirement. We implement robust security measures, encrypted data transmission, and audit trails to ensure patient data protection and regulatory compliance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can automation integrate with our existing EMR system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We have extensive experience integrating with popular EMR systems like Epic, Cerner, Allscripts, and others. Our automation solutions work alongside your existing technology stack without disrupting patient care."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure patient data security during implementation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We follow strict security protocols including data encryption, access controls, staff training on HIPAA requirements, and comprehensive security audits. All team members are HIPAA trained and we maintain Business Associate Agreements with all healthcare clients."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // ROI Calculator
+        function updateCalculator() {
+            const staff = document.getElementById('staff').value;
+            const hoursSaved = document.getElementById('hoursSaved').value;
+            const hourlyRate = document.getElementById('hourlyRate').value;
+            
+            document.getElementById('staffDisplay').textContent = staff;
+            document.getElementById('hoursSavedDisplay').textContent = hoursSaved;
+            document.getElementById('hourlyRateDisplay').textContent = '$' + hourlyRate;
+            
+            const annualSavings = staff * hoursSaved * hourlyRate * 52;
+            document.getElementById('annualSavings').textContent = '$' + annualSavings.toLocaleString();
+        }
+        
+        document.getElementById('staff').addEventListener('input', updateCalculator);
+        document.getElementById('hoursSaved').addEventListener('input', updateCalculator);
+        document.getElementById('hourlyRate').addEventListener('input', updateCalculator);
+        
+        // Counter animation for metrics
+        function animateCounters() {
+            const counters = document.querySelectorAll('[id^="metric"]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 20);
+            });
+        }
+        
+        // Intersection Observer for counter animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        observer.observe(document.querySelector('.metrics'));
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
